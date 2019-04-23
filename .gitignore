@@ -1,0 +1,5 @@
+output/
+srv.pid
+*.pyc
+.users.yml
+pelican-env
