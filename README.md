@@ -20,7 +20,7 @@ Then open a new terminal, CD into your new repo and run:
 virtualenv pelican-env
 source pelican-env/bin/activate
 pip install -r requirements.txt
-./develop_server.sh start
+pelican --listen
 ```
 
 Now navigate to [localhost:8000](http://localhost:8000/) to preview the site, and

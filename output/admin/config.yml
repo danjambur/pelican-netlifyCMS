@@ -1,6 +1,6 @@
 backend:
-  name: github-api
-  repo: danjambur/pelican-netlifyCMS
+  name: netlify-git-api
+  url: http://localhost:8080
 
 production:
   backend:

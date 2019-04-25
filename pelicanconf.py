@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Netlify'
-SITENAME = u'cms-template'
+AUTHOR = 'danny'
+SITENAME = 'media'
 SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'America/Los_Angeles'
+TIMEZONE = 'GMT'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'English'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -30,17 +30,12 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
-
 USE_FOLDER_AS_CATEGORY = False
 
-# STATIC_PATHS = [
-#     'content/admin/config.yml',
-#     ]
-
 TEMPLATE_PAGES = {'admin/index.html': 'admin/index.html'}
-STATIC_PATHS = ['uploads', 'admin']
+STATIC_PATHS = ['uploads', 'admin', 'pages', '/config.yml']
 
 CMS_ENV = "development"
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
