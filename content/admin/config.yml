@@ -1,15 +1,15 @@
 backend:
-  name: github-api
+  name: github
   repo: danjambur/pelican-netlifyCMS
 
 production:
   backend:
-    name: github-api
+    name: github
     repo: danjambur/pelican-netlifyCMS # Change this to your repo
     branch: master
 
-media_folder: "content/uploads" # Folder where user uploaded files should go
-public_folder: "content"
+media_folder: "uploads" # Folder where user uploaded files should go
+public_folder: "uploads"
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -26,11 +26,8 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Categoy", name: "category", widget: "string", default: "General"}
   - name: "pages"
     label: "Pages"
-    files:
-      - name: "about"
-        label: "About"
-        file: "content/pages/about.md"
-        format: frontmatter
-        fields:
-          - {label: "Page Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+    folder: "content/pages"  
+    format: frontmatter
+    fields:
+      - {label: "Page Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
