@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'danny'
 SITENAME = 'media'
-SITEURL = ''
+SITEURL = 'localhost:8000'
+LOAD_CONTENT_CACHE = False
 
 PATH = 'content'
 
@@ -31,11 +32,13 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 USE_FOLDER_AS_CATEGORY = False
+DELETE_OUTPUT_DIRECTORY = True
 
-TEMPLATE_PAGES = {'admin/index.html': 'admin/index.html'}
-STATIC_PATHS = ['uploads', 'admin', 'pages', '/config.yml']
+STATIC_PATHS = ['uploads']
+
+THEME = 'themes/alchemy'
 
 CMS_ENV = "development"
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
