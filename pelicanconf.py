@@ -32,9 +32,9 @@ SOCIAL = (('You can add links in your config file', '#'),
 
 DEFAULT_PAGINATION = 10
 USE_FOLDER_AS_CATEGORY = False
-DELETE_OUTPUT_DIRECTORY = True
 
-STATIC_PATHS = ['uploads']
+STATIC_PATHS = ['uploads', 'admin']
+ARTICLE_EXCLUDES = ['admin']
 
 THEME = 'themes/alchemy'
 
