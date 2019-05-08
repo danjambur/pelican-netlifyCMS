@@ -14,7 +14,7 @@ public_folder: ""
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Article" # Used in the UI, ie.: "New Post"
-    folder: "content" # The path to the folder where the documents are stored
+    folder: "content/blog" # The path to the folder where the documents are stored
     format: frontmatter
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
@@ -28,6 +28,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "Pages"
     folder: "content/pages"  
     format: frontmatter
+    create: true # Allow users to create new documents in this collection
     fields:
       - {label: "Page Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
