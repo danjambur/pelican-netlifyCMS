@@ -4,9 +4,11 @@ from __future__ import unicode_literals
 
 AUTHOR = 'danny'
 SITENAME = 'media'
-SITEURL = ''
+SITEURL = 'localhost:8000'
+LOAD_CONTENT_CACHE = False
 
-PATH = 'content'
+PATH = 'dist'
+OUTPUT_PATH = 'dist/'
 
 TIMEZONE = 'GMT'
 
@@ -30,12 +32,14 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
-USE_FOLDER_AS_CATEGORY = False
+USE_FOLDER_AS_CATEGORY = True
 
-TEMPLATE_PAGES = {'admin/index.html': 'admin/index.html'}
-STATIC_PATHS = ['uploads', 'admin', 'pages', '/config.yml']
+STATIC_PATHS = ['uploads', 'admin']
+ARTICLE_EXCLUDES = ['admin']
+
+THEME = 'themes/northernlights'
 
 CMS_ENV = "development"
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
