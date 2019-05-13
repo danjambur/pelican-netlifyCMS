@@ -9,19 +9,29 @@ the [netlify-git-api](https://github.com/netlify/netlify-git-api/releases) CLI t
 
 CD into your new repo, and run:
 
-```bash
-netlify-git-api users add
-netlify-git-api serve
-```
 
 Then open a new terminal, CD into your new repo and run:
 
 ```bash
-virtualenv pelican-env
-source pelican-env/bin/activate
+virtualenv venv
+.\venv\scripts\activate.bat
 pip install -r requirements.txt
 pelican --listen
 ```
+
+This will run the site as-is.
+
+If you have made changes to the content of the site, you will need to run;
+
+```bash
+pelican content
+pelican --listen
+```
+
+This will regenerate the content based on the changes, and will restart the server.
+
+It is also recommended to make sure to do a `git pull` often, as the set up of the application allows for 3rd-party repo access.
+Essentially, when a change is made on the Netlify CMS, it generates new files within the repo directly. This is why you need to pull often.
 
 Now navigate to [localhost:8000](http://localhost:8000/) to preview the site, and
 to [localhost:8000/admin](http://localhost:8000/admin) to log into the CMS.
@@ -36,7 +46,7 @@ new Github repository.
 Fill out the build command and public folder:
 
 **Build command:** `make publish`
-**Folder:** `/output`
+**Folder:** `/dist`
 
 Now go to [the GitHub developer application screen](https://github.com/settings/developers)
 and **register new application**.
@@ -46,22 +56,9 @@ and **register new application**.
 - **Homepage URL** Ex: https://foobar-1234.netlify.com
 - **Authorization callback URL**  https://api.netlify.com/auth/done
 
-
-
-
 Once you've setup the application, go back to netlify, navigate to the **Access** tab. Then
 fill in your new Client ID and Client Secret in the Github Authentication Provider and check
 the **Enable GitHub** box.
 
 Now anybody with write access to your GitHub repository can log in at yoursite.netlify.com/admin
 and use the CMS.
-
-**Enjoy!**
-
-## Bug reports, feature requests, etc
-
-We love feedback, contributions, better documentation, tutorials, general comments,
-random hatemail, rants, love, crazy ideas, etc, etc!
-
-Contact us at [any of netlify's normal channels](https://www.netlify.com/contact) and
-open issues or pull requests at [the netlify-cms GitHub repo](https://github.com/netlify/netlify-cms)

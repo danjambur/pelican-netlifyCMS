@@ -18,31 +18,29 @@ var path = require('path');
 //style paths
 
 var paths = {
-  static: 'app/static',
-  templates: 'app/templates',
+  templates: 'themes/northernlights/',
   styles: {
-    src: 'app/assets/scss/**/*.scss',
-    dest: 'app/static/styles/'
+    src: 'src/scss/**/*.scss',
+    dest: 'dist/css/'
   },
   js: {
-    //add any required libraries above app/assets folder to access the lib
-    src: 'app/assets/js/**/*.js',
-    dest: 'app/static/js/'
+    //add any required libraries above src folder to access the lib
+    src: 'src/js/**/*.js',
+    dest: 'dist/js/'
   },
   img: {
-    src: 'app/assets/images/**',
-    dest: 'app/static/images/',
-    ignore: '!app/assets/images/high-res'
+    src: 'src/images/**',
+    dest: 'dist/images/',
   },
   sprites: {
-    imgSrc: 'app/assets/images/sprites/*.*',
-    imgDest: 'app/static/images/',
-    scssDest: 'app/assets/scss/components'
+    imgSrc: 'src/images/sprites/*.*',
+    imgDest: 'dist/images/',
+    scssDest: 'src/scss/components'
   }
 };
 
 function clean() {
-  return del(['app/static']);
+  return del(['dist']);
 }
 
 function sprite(done) {
@@ -88,7 +86,7 @@ function styles() {
 
 function images() {
   return gulp
-    .src([paths.img.src, paths.img.ignore])
+    .src([paths.img.src])
     .pipe(
       imagemin({
         optimizationLevel: 5,
@@ -114,21 +112,27 @@ function scripts() {
     .pipe(gulp.dest(paths.js.dest));
 }
 
+function copyHtml () {
+  return gulp.src('./output/**/*.html')
+    .pipe(gulp.dest('dist'));
+}
+
 function watch() {
   gulp.watch(paths.js.src, scripts);
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.img.src, images);
   gulp.watch(paths.img.src, sprite);
+  gulp.watch(paths.templates, copyHtml)
   browserSync.init({
     proxy: 'http://localhost:8000/'
-  });
-  gulp.watch([paths.static, paths.templates]).on('change', browserSync.reload);
+  } );
+  gulp.watch(paths.templates).on('change', browserSync.reload);
 }
 
 /*
 * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
 */
-var build = gulp.series(clean, gulp.parallel(styles, scripts, images, sprite));
+var build = gulp.series(clean, gulp.parallel(styles, scripts, images, sprite, copyHtml));
 
 /*
  * You can still use `gulp.task` to expose tasks
