@@ -7,8 +7,8 @@ SITENAME = 'media'
 SITEURL = 'localhost:8000'
 LOAD_CONTENT_CACHE = False
 
-PATH = 'dist'
-OUTPUT_PATH = 'dist/'
+PATH = 'content'
+OUTPUT_PATH = 'dist'
 
 TIMEZONE = 'GMT'
 
@@ -37,7 +37,7 @@ USE_FOLDER_AS_CATEGORY = True
 STATIC_PATHS = ['uploads', 'admin']
 ARTICLE_EXCLUDES = ['admin']
 
-THEME = 'themes/northernlights'
+THEME = 'theme/northernlights'
 
 CMS_ENV = "development"
 

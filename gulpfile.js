@@ -18,7 +18,7 @@ var path = require('path');
 //style paths
 
 var paths = {
-  templates: 'themes/northernlights/',
+  templates: 'theme/northernlights/',
   styles: {
     src: 'src/scss/**/*.scss',
     dest: 'dist/css/'
@@ -113,7 +113,7 @@ function scripts() {
 }
 
 function copyHtml () {
-  return gulp.src('./output/**/*.html')
+  return gulp.src('output/**/*.html')
     .pipe(gulp.dest('dist'));
 }
 
@@ -122,7 +122,7 @@ function watch() {
   gulp.watch(paths.styles.src, styles);
   gulp.watch(paths.img.src, images);
   gulp.watch(paths.img.src, sprite);
-  gulp.watch(paths.templates, copyHtml)
+  gulp.watch(paths.templates, copyHtml);
   browserSync.init({
     proxy: 'http://localhost:8000/'
   } );

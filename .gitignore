@@ -3,3 +3,4 @@ __pycache__
 .vscode
 output
 node_modules
+dist
