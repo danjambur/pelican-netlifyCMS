@@ -25,13 +25,13 @@
 
 <body>
   <header class="header">
-    <div class="container">
+    <div class="container-fluid">
       {% include 'include/header.html' %}
     </div>
   </header>
 
   <div class="main">
-    <div class="container">
+    <div class="container-fluid">
       <h1>{% block page_header %}{% endblock %}</h1>
       <hr>
       {% block content %}{% endblock %}
@@ -39,7 +39,7 @@
   </div>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container-fluid">
       {% include 'include/footer.html' %}
     </div>
   </footer>
