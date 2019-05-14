@@ -43,7 +43,7 @@ To deploy to production, make sure to push this repository to a Github repo you 
 Then go to [netlify](https://app.netlify.com) and start a new project. Pick your
 new Github repository.
 
-Fill out the build command and public folder:
+Fill out the build command and dist folder:
 
 **Build command:** `make publish`
 **Folder:** `/dist`
@@ -62,3 +62,9 @@ the **Enable GitHub** box.
 
 Now anybody with write access to your GitHub repository can log in at yoursite.netlify.com/admin
 and use the CMS.
+
+### How does this site work?
+
+NetlifyCMS is used as a cms-as-a-service. It is free and open source to use, and very easy to customise using the `config.yml` you can find within the `/admin` folder.
+
+When an article / page is created within NetlifyCMS, it is pushed to the repo.

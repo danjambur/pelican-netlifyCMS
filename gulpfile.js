@@ -113,7 +113,7 @@ function scripts() {
 }
 
 function copyHtml () {
-  return gulp.src('output/**/*.html')
+  return gulp.src('output/**/*')
     .pipe(gulp.dest('dist'));
 }
 

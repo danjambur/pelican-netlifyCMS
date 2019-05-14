@@ -1,0 +1,68 @@
+/* Colors */
+$white: #fff;
+$gray-100: #eeeeee;
+$gray-200: #e9ecef;
+$gray-300: #dcdcdc;
+$gray-400: #c5c5c5;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #333333;
+
+$blue: #43b9e5;
+$dark-blue: #024eb1;
+$indigo: #6610f2;
+$purple: #a42787;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #badf0b;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+
+$primary: $blue;
+$secondary: $gray-600;
+$success: $yellow;
+$info: $dark-blue;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $black;
+
+$link-color: $black;
+$link-hover-color: $purple;
+
+$dark-purple: #004761;
+$darker-purple: #932379;
+$dark-blue: #3ca6ce;
+$green: #89b100;
+$dark-green: #7b9f00;
+$pink: #f6e9f3;
+$enable-rounded: false;
+
+/* Header */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Slab:400,700");
+$headings-font-family: "Roboto Slab", sans-serif;
+$h1-font-size: 2.25rem;
+
+/* Main Body */
+$font-family-sans-serif: "Open Sans", sans-serif;
+$background: $gray-100;
+$body-color: $gray-800;
+
+$font-size-base: 1.25rem;
+/* Elements - Nav */
+$navbar-light-color: $white;
+$navbar-light-hover-color: $white;
+$text-muted: $gray-400;
+$text-gray-light: $gray-300;
+
+/* Dropdowns */
+$dropdown-bg: rgba(0, 0, 0, 0.6);
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $blue;
+$dropdown-link-hover-bg: none;
+$dropdown-link-active-bg: rgba(0, 0, 0, 0.6);
