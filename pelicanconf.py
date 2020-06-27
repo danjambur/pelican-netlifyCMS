@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-SITENAME = "Create Insurance"
+SITENAME = "Site Name"
 SITEURL = "localhost:8000"
 LOAD_CONTENT_CACHE = False
 
